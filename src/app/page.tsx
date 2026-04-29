@@ -1,52 +1,42 @@
+// src/app/page.tsx
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen text-white bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 animate-gradient-x">
-      {/* Navigation Bar */}
-      <nav className="flex justify-between items-center px-8 py-4 bg-purple-700/70 backdrop-blur-md">
-        <h1 className="text-2xl font-bold">Rumaan’s Music</h1>
-        <ul className="flex space-x-6">
-          <li><a href="#" className="hover:text-gray-200 transition">Home</a></li>
-          <li><a href="#" className="hover:text-gray-200 transition">Playlists</a></li>
-          <li><a href="#" className="hover:text-gray-200 transition">About</a></li>
-          <li><a href="#" className="hover:text-gray-200 transition">Contact</a></li>
-        </ul>
-      </nav>
-
+    <main className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center flex-grow text-center px-6">
-        <h2 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-pink-400 to-yellow-300 bg-clip-text text-transparent">
-          Welcome to Rumaan’s Music Website
-        </h2>
-        <p className="text-lg max-w-2xl mb-8">
+      <section className="flex flex-col items-center justify-center text-center py-20 px-6">
+        <h1 className="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-400">
+          Rumaan’s Music
+        </h1>
+        <p className="text-lg max-w-xl mb-6">
           Discover tracks, explore playlists, and enjoy the rhythm of creativity.
         </p>
-        <button className="px-6 py-3 bg-white text-purple-700 font-semibold rounded-lg shadow hover:scale-105 hover:bg-gray-200 transition-transform duration-300">
+        <button className="px-6 py-3 bg-pink-600 hover:bg-pink-700 rounded-lg font-semibold transition">
           Explore Music
         </button>
       </section>
 
-      {/* Featured Tracks */}
-      <section className="px-8 py-12 bg-purple-800/70 backdrop-blur-md">
-        <h3 className="text-3xl font-bold mb-6 text-center">Featured Tracks</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-lg shadow bg-white/10 backdrop-blur-md hover:bg-white/20 transition">
-            <h4 className="text-xl font-semibold mb-2">Track One</h4>
-            <p className="text-sm">A smooth blend of beats and melody.</p>
+      {/* Featured Playlists */}
+      <section className="px-8 py-16">
+        <h2 className="text-3xl font-bold mb-8">Featured Playlists</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-gray-800 rounded-lg p-6 shadow hover:scale-105 transition">
+            <h3 className="text-xl font-semibold mb-2">Chill Vibes</h3>
+            <p className="text-gray-300">Smooth beats for late-night listening.</p>
           </div>
-          <div className="p-6 rounded-lg shadow bg-white/10 backdrop-blur-md hover:bg-white/20 transition">
-            <h4 className="text-xl font-semibold mb-2">Track Two</h4>
-            <p className="text-sm">Energetic vibes to keep you moving.</p>
+          <div className="bg-gray-800 rounded-lg p-6 shadow hover:scale-105 transition">
+            <h3 className="text-xl font-semibold mb-2">Workout Energy</h3>
+            <p className="text-gray-300">High-energy tracks to keep you moving.</p>
           </div>
-          <div className="p-6 rounded-lg shadow bg-white/10 backdrop-blur-md hover:bg-white/20 transition">
-            <h4 className="text-xl font-semibold mb-2">Track Three</h4>
-            <p className="text-sm">Relaxing tunes for late-night listening.</p>
+          <div className="bg-gray-800 rounded-lg p-6 shadow hover:scale-105 transition">
+            <h3 className="text-xl font-semibold mb-2">Indie Discoveries</h3>
+            <p className="text-gray-300">Fresh sounds from emerging artists.</p>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="px-8 py-6 bg-purple-700/70 backdrop-blur-md text-center">
-        <p className="text-sm">&copy; {new Date().getFullYear()} Rumaan’s Music Website. All rights reserved.</p>
+      <footer className="bg-gray-950 text-gray-400 text-center py-6 mt-12">
+        © 2026 Rumaan’s Music Website. All rights reserved.
       </footer>
     </main>
   );
