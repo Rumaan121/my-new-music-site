@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import playlists from "../../playlists.json";
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
@@ -9,20 +9,29 @@ export default function Home() {
   const [dark, setDark] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  // Apply/remove dark class on <html>
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [dark]);
+
   return (
-    <main className={dark ? "dark min-h-screen" : "min-h-screen"}>
+    <main className="min-h-screen bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText transition-colors duration-300">
       {/* Dark Mode Toggle */}
       <div className="p-4">
         <button
           onClick={() => setDark(!dark)}
-          className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded text-black dark:text-white"
+          className="px-4 py-2 rounded bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText border transition-colors duration-300"
         >
           Toggle {dark ? "Light" : "Dark"} Mode
         </button>
       </div>
 
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center py-20 bg-gradient-to-b from-gray-900 to-black text-white dark:from-white dark:to-gray-200 dark:text-black">
+      <section className="flex flex-col items-center justify-center text-center py-20 transition-colors duration-300">
         <h1 className="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
           Rumaan’s Music
         </h1>
@@ -41,14 +50,10 @@ export default function Home() {
           {playlists.map((playlist, index) => (
             <div
               key={index}
-              className="bg-gray-800 dark:bg-gray-100 rounded-lg p-6 shadow-lg"
+              className="rounded-lg p-6 shadow-lg bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText transition-colors duration-300"
             >
-              <h3 className="text-xl font-semibold mb-2 text-white dark:text-black">
-                {playlist.title}
-              </h3>
-              <p className="text-gray-300 dark:text-gray-700 mb-4">
-                {playlist.description}
-              </p>
+              <h3 className="text-xl font-semibold mb-2">{playlist.title}</h3>
+              <p className="mb-4">{playlist.description}</p>
               <AudioPlayer
                 src={playlist.url}
                 showJumpControls={false}
@@ -80,20 +85,20 @@ export default function Home() {
               type="text"
               name="name"
               placeholder="Your Name"
-              className="w-full p-2 rounded border"
+              className="w-full p-2 rounded border bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText transition-colors duration-300"
               required
             />
             <input
               type="email"
               name="email"
               placeholder="Your Email"
-              className="w-full p-2 rounded border"
+              className="w-full p-2 rounded border bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText transition-colors duration-300"
               required
             />
             <textarea
               name="message"
               placeholder="Your Message"
-              className="w-full p-2 rounded border"
+              className="w-full p-2 rounded border bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText transition-colors duration-300"
               rows={5}
               required
             />

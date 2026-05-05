@@ -7,7 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // you can add custom colors, fonts, or animations here later
+      colors: {
+        lightBg: "#ffffff",
+        lightText: "#000000",
+        darkBg: "#1a1a1a",
+        darkText: "#f5f5f5",
+      },
+      fontFamily: {
+        sans: ["Inter", "Poppins", "sans-serif"],
+      },
+      transitionProperty: {
+        'colors': 'background-color, border-color, color, fill, stroke',
+      },
     },
   },
   plugins: [],
